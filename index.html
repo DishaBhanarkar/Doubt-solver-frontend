@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <title>Doubt Solver | Ask Easily</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- ✅ Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
     body {
       font-family: 'Poppins', sans-serif;
     }
@@ -33,50 +31,29 @@
       background-repeat: repeat;
       background-size: contain;
     }
-
-    .scrollable-content {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 4rem;
-      padding-bottom: 4rem;
-    }
-
-    .answer-box {
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 1rem;
-      padding: 20px;
-      width: 100%;
-      max-width: 800px;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
   </style>
 </head>
 <body class="m-0 p-0 text-gray-800">
 
-  <!-- ✅ Page 1: Welcome -->
-  <section id="home" class="h-screen w-full background-wave flex flex-col justify-center items-center text-white text-center px-6">
-    <div class="max-w-2xl">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Doubt Solver 🌸</h1>
-      <p class="text-sm md:text-base mb-8">Get the answer to your questions without unnecessary steps or four-page thesis.</p>
+  <!-- ✅ Welcome Page -->
+  <section id="home" class="min-h-screen w-full background-wave flex flex-col justify-center items-center text-white text-center px-6">
+    <div class="max-w-2xl px-4">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Doubt Solver 🌸</h1>
+      <p class="text-sm sm:text-base mb-8">Get answers to your questions without four-page explanations.</p>
       <button onclick="showMain()" class="bg-blue-300 text-black px-6 py-2 rounded-full text-lg font-semibold hover:bg-blue-400 transition">Start</button>
     </div>
 
-    <!-- ✅ Description Section -->
-    <div class="absolute bottom-10 text-white w-full text-center">
-      <p class="text-lg font-medium">This app helps students get instant theory or equation-based answers using AI.</p>
-      <p class="text-sm mt-2">Made by <strong>Disha Bhanarkar</strong> | 📧 <a href="mailto:disha@example.com" class="underline">dishabhanarkar123@gmail.com</a></p>
+    <div class="absolute bottom-6 text-white w-full text-center px-4">
+      <p class="text-sm sm:text-lg font-medium">Built using AI + Wolfram Alpha for theory & equations.</p>
+      <p class="text-xs mt-2">Made by <strong>Disha Bhanarkar</strong> | 📧 <a href="mailto:dishabhanarkar123@gmail.com" class="underline">dishabhanarkar123@gmail.com</a></p>
     </div>
   </section>
 
-  <!-- ✅ Page 2: Main QA Page -->
-  <section id="main" class="hidden w-full grid-background overflow-y-auto">
-    <div class="scrollable-content">
+  <!-- ✅ Main App Page -->
+  <section id="main" class="hidden min-h-screen w-full grid-background overflow-y-auto flex justify-center px-4">
+    <div class="w-full max-w-2xl py-10 flex flex-col items-center">
       <!-- Mode Toggle -->
-      <div class="curved-box p-4 w-[300px] text-center mb-6">
+      <div class="curved-box p-4 w-[90%] sm:w-[300px] text-center mb-6">
         <label class="mr-4">
           <input type="radio" name="mode" value="theory" checked> Theory
         </label>
@@ -85,9 +62,9 @@
         </label>
       </div>
 
-      <!-- Question Box -->
+      <!-- Question Input -->
       <textarea id="question" placeholder="Type your question here..." rows="3"
-                class="w-full max-w-xl p-4 rounded-xl shadow-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none mb-4"></textarea>
+                class="w-full p-4 rounded-xl shadow-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none mb-4"></textarea>
 
       <!-- Ask Button -->
       <button onclick="askQuestion()"
@@ -95,9 +72,9 @@
         Ask
       </button>
 
-      <!-- Answer Output -->
+      <!-- Answer Box -->
       <div id="answer"
-           class="curved-box max-w-xl w-full p-4 min-h-[100px] text-black text-lg text-left whitespace-pre-wrap hidden">
+           class="curved-box w-full p-4 min-h-[100px] text-black text-lg text-left whitespace-pre-wrap hidden">
       </div>
     </div>
   </section>
